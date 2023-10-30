@@ -1,0 +1,129 @@
+<!--Bismillahir Rahmaanir Raheem-->
+<!--Almadadh Ya Gause Radi Allahu Ta'alah Anh - Ameen-->
+<!-- iKhokha Dev Challenge-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Factorial Calculator by Zakia Salod</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #fff1e3;
+            transition: background-color 0.5s;
+        }
+
+        /* Styling the main container */
+        div {
+            background-color: #fff1e3;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        /* Styling the number input */
+        #numberInput {
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Styling the calculate button */
+        button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #58a6a3;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        /* Hover effect for the calculate button */
+        button:hover {
+            background-color: #417f7a;
+        }
+
+        /* Styling the output display */
+        #output {
+            margin-top: 10px;
+            font-weight: bold;
+            color: #58a6a3;
+        }
+
+        /* Funky Header and Footer */
+		header, footer {
+			position: fixed;
+			left: 0;
+			width: 100%;
+			padding: 10px;
+			text-align: center;
+			background-color: #58a6a3;  /* Changed header and footer color */
+			color: white;
+			font-weight: bold;
+		}
+
+        header {
+            top: 0;
+        }
+
+        footer {
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Funky Header -->
+    <header>Welcome to Zakia's Factorial Calculator 🚀</header>
+	    <!-- Main Factorial Calculator Interface -->
+    <div>
+	    <img id="calculatorImage" src="calculator.png" alt="Whimsical Calculator" style="width: 200px; height: 190px; margin-bottom: 20px;">
+        
+        <div id="image"></div>
+    </div>
+
+    <!-- Main Factorial Calculator Interface -->
+    <div>
+	    
+        <input type="number" id="numberInput" placeholder="Enter a positive integer">
+        <button onclick="computeFactorial()">Calculate Factorial</button>
+        <div id="output"></div>
+    </div>
+
+    <!-- Funky Footer -->
+    <footer>Made with ❤️ in South Africa by Zakia Salod</footer>
+
+    <script>
+        /* Function to compute factorial */
+        function computeFactorial() {
+            const n = parseInt(document.getElementById('numberInput').value);
+
+            // Input validation
+            if (isNaN(n) || n < 0) {
+                alert('Please enter a valid positive integer.');
+                return;
+            }
+
+            // Calculate factorial using loop
+            let result = 1;
+            for (let i = 2; i <= n; i++) {
+                result *= i;
+            }
+
+            // Display the result
+            document.getElementById('output').textContent = `Factorial of ${n} is: ${result}`;
+        }
+    </script>
+</body>
+</html>
+
